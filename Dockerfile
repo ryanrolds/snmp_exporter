@@ -1,6 +1,6 @@
 FROM golang:1.19-alpine
 
-RUN apk --no-cache add ca-certificates make gcc musl-dev net-snmp-dev curl
+RUN apk --no-cache add ca-certificates make gcc musl-dev net-snmp-dev curl git
 
 WORKDIR /build
 COPY . .
