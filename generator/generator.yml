@@ -21,6 +21,10 @@ modules:
       ifType:
         type: EnumAsInfo
 
+  # Default IP-MIB with ipv4InterfaceTable for example.
+  ip_mib:
+    walk: [ipIfStatsTable]
+
 # Cisco Wireless LAN Controller
   cisco_wlc:
     walk:

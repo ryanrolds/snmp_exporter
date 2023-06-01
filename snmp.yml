@@ -10558,6 +10558,650 @@ infrapower_pdu:
         regex: ^(?:(\d*?)(\d{2}))$
       - value: 0.0$1
         regex: ^(?:^(\d))$
+ip_mib:
+  walk:
+  - 1.3.6.1.2.1.4.31.3
+  metrics:
+  - name: ipIfStatsIPVersion
+    oid: 1.3.6.1.2.1.4.31.3.1.1
+    type: gauge
+    help: The IP version of this row. - 1.3.6.1.2.1.4.31.3.1.1
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+    enum_values:
+      0: unknown
+      1: ipv4
+      2: ipv6
+  - name: ipIfStatsIfIndex
+    oid: 1.3.6.1.2.1.4.31.3.1.2
+    type: gauge
+    help: The index value that uniquely identifies the interface to which this entry
+      is applicable - 1.3.6.1.2.1.4.31.3.1.2
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsInReceives
+    oid: 1.3.6.1.2.1.4.31.3.1.3
+    type: counter
+    help: The total number of input IP datagrams received, including those received
+      in error - 1.3.6.1.2.1.4.31.3.1.3
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsHCInReceives
+    oid: 1.3.6.1.2.1.4.31.3.1.4
+    type: counter
+    help: The total number of input IP datagrams received, including those received
+      in error - 1.3.6.1.2.1.4.31.3.1.4
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsInOctets
+    oid: 1.3.6.1.2.1.4.31.3.1.5
+    type: counter
+    help: The total number of octets received in input IP datagrams, including those
+      received in error - 1.3.6.1.2.1.4.31.3.1.5
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsHCInOctets
+    oid: 1.3.6.1.2.1.4.31.3.1.6
+    type: counter
+    help: The total number of octets received in input IP datagrams, including those
+      received in error - 1.3.6.1.2.1.4.31.3.1.6
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsInHdrErrors
+    oid: 1.3.6.1.2.1.4.31.3.1.7
+    type: counter
+    help: The number of input IP datagrams discarded due to errors in their IP headers,
+      including version number mismatch, other format errors, hop count exceeded,
+      errors discovered in processing their IP options, etc - 1.3.6.1.2.1.4.31.3.1.7
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsInNoRoutes
+    oid: 1.3.6.1.2.1.4.31.3.1.8
+    type: counter
+    help: The number of input IP datagrams discarded because no route could be found
+      to transmit them to their destination - 1.3.6.1.2.1.4.31.3.1.8
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsInAddrErrors
+    oid: 1.3.6.1.2.1.4.31.3.1.9
+    type: counter
+    help: The number of input IP datagrams discarded because the IP address in their
+      IP header's destination field was not a valid address to be received at this
+      entity - 1.3.6.1.2.1.4.31.3.1.9
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsInUnknownProtos
+    oid: 1.3.6.1.2.1.4.31.3.1.10
+    type: counter
+    help: The number of locally-addressed IP datagrams received successfully but discarded
+      because of an unknown or unsupported protocol - 1.3.6.1.2.1.4.31.3.1.10
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsInTruncatedPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.11
+    type: counter
+    help: The number of input IP datagrams discarded because the datagram frame didn't
+      carry enough data - 1.3.6.1.2.1.4.31.3.1.11
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsInForwDatagrams
+    oid: 1.3.6.1.2.1.4.31.3.1.12
+    type: counter
+    help: The number of input datagrams for which this entity was not their final
+      IP destination and for which this entity attempted to find a route to forward
+      them to that final destination - 1.3.6.1.2.1.4.31.3.1.12
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsHCInForwDatagrams
+    oid: 1.3.6.1.2.1.4.31.3.1.13
+    type: counter
+    help: The number of input datagrams for which this entity was not their final
+      IP destination and for which this entity attempted to find a route to forward
+      them to that final destination - 1.3.6.1.2.1.4.31.3.1.13
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsReasmReqds
+    oid: 1.3.6.1.2.1.4.31.3.1.14
+    type: counter
+    help: The number of IP fragments received that needed to be reassembled at this
+      interface - 1.3.6.1.2.1.4.31.3.1.14
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsReasmOKs
+    oid: 1.3.6.1.2.1.4.31.3.1.15
+    type: counter
+    help: The number of IP datagrams successfully reassembled - 1.3.6.1.2.1.4.31.3.1.15
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsReasmFails
+    oid: 1.3.6.1.2.1.4.31.3.1.16
+    type: counter
+    help: 'The number of failures detected by the IP re-assembly algorithm (for whatever
+      reason: timed out, errors, etc.) - 1.3.6.1.2.1.4.31.3.1.16'
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsInDiscards
+    oid: 1.3.6.1.2.1.4.31.3.1.17
+    type: counter
+    help: The number of input IP datagrams for which no problems were encountered
+      to prevent their continued processing, but were discarded (e.g., for lack of
+      buffer space) - 1.3.6.1.2.1.4.31.3.1.17
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsInDelivers
+    oid: 1.3.6.1.2.1.4.31.3.1.18
+    type: counter
+    help: The total number of datagrams successfully delivered to IP user-protocols
+      (including ICMP) - 1.3.6.1.2.1.4.31.3.1.18
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsHCInDelivers
+    oid: 1.3.6.1.2.1.4.31.3.1.19
+    type: counter
+    help: The total number of datagrams successfully delivered to IP user-protocols
+      (including ICMP) - 1.3.6.1.2.1.4.31.3.1.19
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsOutRequests
+    oid: 1.3.6.1.2.1.4.31.3.1.20
+    type: counter
+    help: The total number of IP datagrams that local IP user- protocols (including
+      ICMP) supplied to IP in requests for transmission - 1.3.6.1.2.1.4.31.3.1.20
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsHCOutRequests
+    oid: 1.3.6.1.2.1.4.31.3.1.21
+    type: counter
+    help: The total number of IP datagrams that local IP user- protocols (including
+      ICMP) supplied to IP in requests for transmission - 1.3.6.1.2.1.4.31.3.1.21
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsOutForwDatagrams
+    oid: 1.3.6.1.2.1.4.31.3.1.23
+    type: counter
+    help: The number of datagrams for which this entity was not their final IP destination
+      and for which it was successful in finding a path to their final destination
+      - 1.3.6.1.2.1.4.31.3.1.23
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsHCOutForwDatagrams
+    oid: 1.3.6.1.2.1.4.31.3.1.24
+    type: counter
+    help: The number of datagrams for which this entity was not their final IP destination
+      and for which it was successful in finding a path to their final destination
+      - 1.3.6.1.2.1.4.31.3.1.24
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsOutDiscards
+    oid: 1.3.6.1.2.1.4.31.3.1.25
+    type: counter
+    help: The number of output IP datagrams for which no problem was encountered to
+      prevent their transmission to their destination, but were discarded (e.g., for
+      lack of buffer space) - 1.3.6.1.2.1.4.31.3.1.25
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsOutFragReqds
+    oid: 1.3.6.1.2.1.4.31.3.1.26
+    type: counter
+    help: The number of IP datagrams that would require fragmentation in order to
+      be transmitted - 1.3.6.1.2.1.4.31.3.1.26
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsOutFragOKs
+    oid: 1.3.6.1.2.1.4.31.3.1.27
+    type: counter
+    help: The number of IP datagrams that have been successfully fragmented - 1.3.6.1.2.1.4.31.3.1.27
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsOutFragFails
+    oid: 1.3.6.1.2.1.4.31.3.1.28
+    type: counter
+    help: The number of IP datagrams that have been discarded because they needed
+      to be fragmented but could not be - 1.3.6.1.2.1.4.31.3.1.28
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsOutFragCreates
+    oid: 1.3.6.1.2.1.4.31.3.1.29
+    type: counter
+    help: The number of output datagram fragments that have been generated as a result
+      of IP fragmentation - 1.3.6.1.2.1.4.31.3.1.29
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsOutTransmits
+    oid: 1.3.6.1.2.1.4.31.3.1.30
+    type: counter
+    help: The total number of IP datagrams that this entity supplied to the lower
+      layers for transmission - 1.3.6.1.2.1.4.31.3.1.30
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsHCOutTransmits
+    oid: 1.3.6.1.2.1.4.31.3.1.31
+    type: counter
+    help: The total number of IP datagrams that this entity supplied to the lower
+      layers for transmission - 1.3.6.1.2.1.4.31.3.1.31
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsOutOctets
+    oid: 1.3.6.1.2.1.4.31.3.1.32
+    type: counter
+    help: The total number of octets in IP datagrams delivered to the lower layers
+      for transmission - 1.3.6.1.2.1.4.31.3.1.32
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsHCOutOctets
+    oid: 1.3.6.1.2.1.4.31.3.1.33
+    type: counter
+    help: The total number of octets in IP datagrams delivered to the lower layers
+      for transmission - 1.3.6.1.2.1.4.31.3.1.33
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsInMcastPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.34
+    type: counter
+    help: The number of IP multicast datagrams received - 1.3.6.1.2.1.4.31.3.1.34
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsHCInMcastPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.35
+    type: counter
+    help: The number of IP multicast datagrams received - 1.3.6.1.2.1.4.31.3.1.35
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsInMcastOctets
+    oid: 1.3.6.1.2.1.4.31.3.1.36
+    type: counter
+    help: The total number of octets received in IP multicast datagrams - 1.3.6.1.2.1.4.31.3.1.36
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsHCInMcastOctets
+    oid: 1.3.6.1.2.1.4.31.3.1.37
+    type: counter
+    help: The total number of octets received in IP multicast datagrams - 1.3.6.1.2.1.4.31.3.1.37
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsOutMcastPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.38
+    type: counter
+    help: The number of IP multicast datagrams transmitted - 1.3.6.1.2.1.4.31.3.1.38
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsHCOutMcastPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.39
+    type: counter
+    help: The number of IP multicast datagrams transmitted - 1.3.6.1.2.1.4.31.3.1.39
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsOutMcastOctets
+    oid: 1.3.6.1.2.1.4.31.3.1.40
+    type: counter
+    help: The total number of octets transmitted in IP multicast datagrams - 1.3.6.1.2.1.4.31.3.1.40
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsHCOutMcastOctets
+    oid: 1.3.6.1.2.1.4.31.3.1.41
+    type: counter
+    help: The total number of octets transmitted in IP multicast datagrams - 1.3.6.1.2.1.4.31.3.1.41
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsInBcastPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.42
+    type: counter
+    help: The number of IP broadcast datagrams received - 1.3.6.1.2.1.4.31.3.1.42
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsHCInBcastPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.43
+    type: counter
+    help: The number of IP broadcast datagrams received - 1.3.6.1.2.1.4.31.3.1.43
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsOutBcastPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.44
+    type: counter
+    help: The number of IP broadcast datagrams transmitted - 1.3.6.1.2.1.4.31.3.1.44
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsHCOutBcastPkts
+    oid: 1.3.6.1.2.1.4.31.3.1.45
+    type: counter
+    help: The number of IP broadcast datagrams transmitted - 1.3.6.1.2.1.4.31.3.1.45
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsDiscontinuityTime
+    oid: 1.3.6.1.2.1.4.31.3.1.46
+    type: gauge
+    help: The value of sysUpTime on the most recent occasion at which any one or more
+      of this entry's counters suffered a discontinuity - 1.3.6.1.2.1.4.31.3.1.46
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
+  - name: ipIfStatsRefreshRate
+    oid: 1.3.6.1.2.1.4.31.3.1.47
+    type: gauge
+    help: The minimum reasonable polling interval for this entry - 1.3.6.1.2.1.4.31.3.1.47
+    indexes:
+    - labelname: ipIfStatsIPVersion
+      type: gauge
+      enum_values:
+        0: unknown
+        1: ipv4
+        2: ipv6
+    - labelname: ipIfStatsIfIndex
+      type: gauge
 keepalived:
   walk:
   - 1.3.6.1.2.1.207.1.2.5
