@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
-      - name: Build presentation image
+      - name: Build image
         run: docker build -t snmp-generator .
       - name: Login to Docker registry
         uses: docker/login-action@v2
@@ -24,6 +24,7 @@ jobs:
           tags: |
             docker.pedanticorderliness.com/snmp-exporter:${{ github.sha }}
           push: true
+          target: snmp-exporter
       # - name: Update values.yaml
       #   uses: fjogeleit/yaml-update-action@main
       #   with:
