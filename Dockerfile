@@ -9,12 +9,12 @@ COPY . .
 
 RUN make common-build
 
-FROM alpine:3.17
+# FROM alpine:3.17
 
 # RUN apk --no-cache add ca-certificates
 
-COPY --from=0 /build/snmp_exporter  /bin/snmp_exporter
-COPY --from=0 /build/snmp.yml       /etc/snmp_exporter/snmp.yml
+# COPY --from=0 /build/snmp_exporter  /bin/snmp_exporter
+# COPY --from=0 /build/snmp.yml       /etc/snmp_exporter/snmp.yml
 
 EXPOSE      9116
 ENTRYPOINT  [ "/bin/snmp_exporter" ]

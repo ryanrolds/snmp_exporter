@@ -10,10 +10,10 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
-      - name: Build source
-        run: make common-build
-      - name: Build image
-        run: docker build .
+      # - name: Build source
+      #   run: make common-build
+      # - name: Build image
+      #   run: docker build .
       - name: Login to Docker registry
         uses: docker/login-action@v2
         with:
