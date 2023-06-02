@@ -9,7 +9,7 @@ COPY . .
 
 FROM alpine:3.17
 
-RUN apk --no-cache add ca-certificates
+# RUN apk --no-cache add ca-certificates
 
 COPY --from=0 /build/snmp_exporter  /bin/snmp_exporter
 COPY --from=0 /build/snmp.yml       /etc/snmp_exporter/snmp.yml
