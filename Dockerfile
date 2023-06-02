@@ -5,11 +5,9 @@ RUN apk --no-cache add ca-certificates make gcc musl-dev net-snmp-dev curl git
 WORKDIR /build
 COPY . .
 
-RUN make common-build
-
 FROM alpine:3.17
 
-RUN apk --no-cache add ca-certificates net-snmp
+RUN apk --no-cache add ca-certificates
 
 COPY --from=0 /build/snmp_exporter  /bin/snmp_exporter
 COPY --from=0 /build/snmp.yml       /etc/snmp_exporter/snmp.yml
