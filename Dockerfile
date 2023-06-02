@@ -1,4 +1,4 @@
-FROM golang:1.19-alpine
+FROM golang:1.20
 
 RUN apk --no-cache add ca-certificates make gcc musl-dev net-snmp-dev curl git
 
