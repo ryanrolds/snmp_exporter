@@ -1,6 +1,8 @@
 FROM golang:1.20
 
-RUN apk --no-cache add ca-certificates make gcc musl-dev net-snmp-dev curl git
+#RUN apk --no-cache add ca-certificates make gcc musl-dev net-snmp-dev curl git
+RUN apt-get update
+RUN apt-get -y install build-essential diffutils libsnmp-dev p7zip-full
 
 WORKDIR /build
 COPY . .
