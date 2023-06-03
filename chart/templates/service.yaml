@@ -6,7 +6,6 @@ metadata:
 spec:
   selector:
     app: snmp-exporter
-spec:
   type: ClusterIP
   ports:
     - protocol: TCP
