@@ -1,3 +1,5 @@
+ARG GIT_SHA
+
 FROM golang:1.20
 
 #RUN apk --no-cache add ca-certificates make gcc musl-dev net-snmp-dev curl git
@@ -17,4 +19,4 @@ RUN make common-build
 # COPY --from=0 /build/snmp.yml       /etc/snmp_exporter/snmp.yml
 
 EXPOSE      9116
-CMD         [ "/build/snmp_exporter", "--config.file=/etc/snmp_exporter/snmp.yml" ]
+CMD         ["/build/snmp_exporter", "--config.file=/etc/snmp_exporter/snmp.yml"]

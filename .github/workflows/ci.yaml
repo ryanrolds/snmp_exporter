@@ -25,6 +25,9 @@ jobs:
         with:
           tags: docker.pedanticorderliness.com/snmp-exporter:${{ github.sha }}
           push: true
+          build-args:
+            - 'GIT_SHA=${{ github.sha }}'
+
       - name: Update values.yaml
         uses: fjogeleit/yaml-update-action@main
         with:
