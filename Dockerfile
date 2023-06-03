@@ -6,10 +6,10 @@ FROM golang:1.20
 RUN apt-get update
 RUN apt-get -y install build-essential diffutils libsnmp-dev p7zip-full
 
-WORKDIR /build
+WORKDIR /snmp_exporter
 COPY . .
 
-RUN make common-build
+RUN make all
 
 # FROM alpine:3.17
 
