@@ -12,7 +12,7 @@ spec:
     namespace: snmp-exporter
     server: https://kubernetes.default.svc
   - name: in-cluster
-    namespace:snmp-exporter
+    namespace: snmp-exporter
     server: https://kubernetes.default.svc
   sourceRepos:
-  - https://github.com/ryanrolds/snmp-exporter.git
+  - https://github.com/ryanrolds/snpm_exporter.git
