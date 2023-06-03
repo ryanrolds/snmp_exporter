@@ -10561,6 +10561,7 @@ infrapower_pdu:
 ip_mib:
   walk:
   - 1.3.6.1.2.1.4.31.3
+  - 1.3.6.1.2.1.4.34
   metrics:
   - name: ipIfStatsIPVersion
     oid: 1.3.6.1.2.1.4.31.3.1.1
@@ -11202,6 +11203,125 @@ ip_mib:
         2: ipv6
     - labelname: ipIfStatsIfIndex
       type: gauge
+  - name: ipAddressAddrType
+    oid: 1.3.6.1.2.1.4.34.1.1
+    type: gauge
+    help: The address type of ipAddressAddr. - 1.3.6.1.2.1.4.34.1.1
+    indexes:
+    - labelname: ipAddressAddr
+      type: InetAddress
+    enum_values:
+      0: unknown
+      1: ipv4
+      2: ipv6
+      3: ipv4z
+      4: ipv6z
+      16: dns
+  - name: ipAddressAddr
+    oid: 1.3.6.1.2.1.4.34.1.2
+    type: InetAddress
+    help: The IP address to which this entry's addressing information pertains - 1.3.6.1.2.1.4.34.1.2
+    indexes:
+    - labelname: ipAddressAddr
+      type: InetAddress
+  - name: ipAddressIfIndex
+    oid: 1.3.6.1.2.1.4.34.1.3
+    type: gauge
+    help: The index value that uniquely identifies the interface to which this entry
+      is applicable - 1.3.6.1.2.1.4.34.1.3
+    indexes:
+    - labelname: ipAddressAddr
+      type: InetAddress
+  - name: ipAddressType
+    oid: 1.3.6.1.2.1.4.34.1.4
+    type: gauge
+    help: The type of address - 1.3.6.1.2.1.4.34.1.4
+    indexes:
+    - labelname: ipAddressAddr
+      type: InetAddress
+    enum_values:
+      1: unicast
+      2: anycast
+      3: broadcast
+  - name: ipAddressPrefix
+    oid: 1.3.6.1.2.1.4.34.1.5
+    type: OctetString
+    help: A pointer to the row in the prefix table to which this address belongs -
+      1.3.6.1.2.1.4.34.1.5
+    indexes:
+    - labelname: ipAddressAddr
+      type: InetAddress
+  - name: ipAddressOrigin
+    oid: 1.3.6.1.2.1.4.34.1.6
+    type: gauge
+    help: The origin of the address. - 1.3.6.1.2.1.4.34.1.6
+    indexes:
+    - labelname: ipAddressAddr
+      type: InetAddress
+    enum_values:
+      1: other
+      2: manual
+      4: dhcp
+      5: linklayer
+      6: random
+  - name: ipAddressStatus
+    oid: 1.3.6.1.2.1.4.34.1.7
+    type: gauge
+    help: The status of the address, describing if the address can be used for communication
+      - 1.3.6.1.2.1.4.34.1.7
+    indexes:
+    - labelname: ipAddressAddr
+      type: InetAddress
+    enum_values:
+      1: preferred
+      2: deprecated
+      3: invalid
+      4: inaccessible
+      5: unknown
+      6: tentative
+      7: duplicate
+      8: optimistic
+  - name: ipAddressCreated
+    oid: 1.3.6.1.2.1.4.34.1.8
+    type: gauge
+    help: The value of sysUpTime at the time this entry was created - 1.3.6.1.2.1.4.34.1.8
+    indexes:
+    - labelname: ipAddressAddr
+      type: InetAddress
+  - name: ipAddressLastChanged
+    oid: 1.3.6.1.2.1.4.34.1.9
+    type: gauge
+    help: The value of sysUpTime at the time this entry was last updated - 1.3.6.1.2.1.4.34.1.9
+    indexes:
+    - labelname: ipAddressAddr
+      type: InetAddress
+  - name: ipAddressRowStatus
+    oid: 1.3.6.1.2.1.4.34.1.10
+    type: gauge
+    help: The status of this conceptual row - 1.3.6.1.2.1.4.34.1.10
+    indexes:
+    - labelname: ipAddressAddr
+      type: InetAddress
+    enum_values:
+      1: active
+      2: notInService
+      3: notReady
+      4: createAndGo
+      5: createAndWait
+      6: destroy
+  - name: ipAddressStorageType
+    oid: 1.3.6.1.2.1.4.34.1.11
+    type: gauge
+    help: The storage type for this conceptual row - 1.3.6.1.2.1.4.34.1.11
+    indexes:
+    - labelname: ipAddressAddr
+      type: InetAddress
+    enum_values:
+      1: other
+      2: volatile
+      3: nonVolatile
+      4: permanent
+      5: readOnly
 keepalived:
   walk:
   - 1.3.6.1.2.1.207.1.2.5
