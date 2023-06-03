@@ -17,5 +17,6 @@ spec:
     server: "https://kubernetes.default.svc"
     namespace: snmp-exporter
   syncPolicy:
+    automated: {}
     syncOptions:
       - CreateNamespace=true
