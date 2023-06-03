@@ -9,7 +9,7 @@ RUN apt-get -y install build-essential diffutils libsnmp-dev p7zip-full
 WORKDIR /snmp_exporter
 COPY . .
 
-RUN make all
+RUN make common-build
 
 # FROM alpine:3.17
 
