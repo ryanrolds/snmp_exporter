@@ -17,5 +17,4 @@ RUN make common-build
 # COPY --from=0 /build/snmp.yml       /etc/snmp_exporter/snmp.yml
 
 EXPOSE      9116
-ENTRYPOINT  [ "/bin/snmp_exporter" ]
-CMD         [ "--config.file=/etc/snmp_exporter/snmp.yml" ]
+CMD         [ "/build/snmp_exporter", "--config.file=/etc/snmp_exporter/snmp.yml" ]

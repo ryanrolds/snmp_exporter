@@ -6,7 +6,7 @@ metadata:
 spec:
   project: snmp-exporter
   source:
-    repoURL: https://github.com/ryanrolds/snpm_exporter.git
+    repoURL: https://github.com/ryanrolds/snmp_exporter.git
     targetRevision: main
     helm:
       parameters:
