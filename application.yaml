@@ -1,21 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: presentations
+  name: snmp-exporter
   namespace: argocd
 spec:
-  project: presentations
+  project: snmp-exporter
   source:
-    repoURL: https://github.com/ryanrolds/presentations.git
-    targetRevision: master
+    repoURL: https://github.com/ryanrolds/snpm_exporter.git
+    targetRevision: main
     helm:
       parameters:
         - name: ingress
-          value: presentations
+          value: snmp-exporter
     path: ./chart/
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: presentations
+    namespace: snmp-exporter
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

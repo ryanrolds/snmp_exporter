@@ -32,4 +32,5 @@ jobs:
           propertyPath: 'image.tag'
           value: '${{ github.sha }}'
           commitChange: true
+          branch: main
           message: 'Update Image Version to "${{ github.sha }}' 
