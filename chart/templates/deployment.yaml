@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snmp-exporter
+  labels:
+    app: snmp-exporter
+spec:
+  selector:
+    matchLabels:
+      app: snmp-exporter
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: snmp-exporter
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: snmp-exporter
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

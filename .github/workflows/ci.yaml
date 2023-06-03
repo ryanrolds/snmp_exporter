@@ -25,11 +25,11 @@ jobs:
         with:
           tags: docker.pedanticorderliness.com/snmp-exporter:${{ github.sha }}
           push: true
-      # - name: Update values.yaml
-      #   uses: fjogeleit/yaml-update-action@main
-      #   with:
-      #     valueFile: 'chart/values.yaml'
-      #     propertyPath: 'image.tag'
-      #     value: '${{ github.sha }}'
-      #     commitChange: true
-      #     message: 'Update Image Version to "${{ github.sha }}' 
+      - name: Update values.yaml
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          valueFile: 'chart/values.yaml'
+          propertyPath: 'image.tag'
+          value: '${{ github.sha }}'
+          commitChange: true
+          message: 'Update Image Version to "${{ github.sha }}' 

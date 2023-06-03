@@ -1,0 +1,4 @@
+ingress: snmp-exporter
+image:
+  repository: docker.pedanticorderliness.com/snmp-exporter
+  tag: latest
