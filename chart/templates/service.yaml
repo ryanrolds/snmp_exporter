@@ -9,5 +9,5 @@ spec:
   type: ClusterIP
   ports:
     - protocol: TCP
-      port: 9115
-      targetPort: 9115
+      port: 9116
+      targetPort: 9116
