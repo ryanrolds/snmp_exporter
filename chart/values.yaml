@@ -1,4 +1,3 @@
-ingress: snmp-exporter
 image:
   repository: docker.pedanticorderliness.com/snmp-exporter
-  tag: dc2106aa67cc78bf84a892f6a71ab889aa599b06
+  tag: f133551a35cebb4937b6206f5f9002fe15d5f3a1
